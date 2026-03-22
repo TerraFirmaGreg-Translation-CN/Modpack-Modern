@@ -44,7 +44,9 @@ const registerFirmaLifeRecipes = (event) => {
 	event.remove({ id: 'firmalife:heating/metal/stainless_steel_block_slab' })
 	event.remove({ id: 'firmalife:heating/metal/stainless_steel_block_stairs' })
 
-	event.remove({ id: /^firmalife:crafting\/.*_dough/ })
+	global.TFC_DOUGHS.forEach(dough => {
+		event.remove({ id: `firmalife:crafting/${dough}_dough` })
+	})
 
 	event.remove({ id: 'firmalife:pot/chocolate' })
 
@@ -135,6 +137,8 @@ const registerFirmaLifeRecipes = (event) => {
 		.itemOutputs('8x firmalife:pineapple_yarn')
 		.duration(50)
 		.EUt(7)
+		
+	event.remove({ id: 'firmalife:crafting/pineapple_yarn' })
 
 	// Pineapple Leather
 	event.recipes.gtceu.assembler(`tfg:firmalife/pineapple_leather`)
@@ -311,7 +315,7 @@ const registerFirmaLifeRecipes = (event) => {
 	], {
 		A: '#forge:saw_heads/steel',
 		B: '#forge:rods/steel',
-		C: 'vintageimprovements:redstone_module',
+		C: '#forge:small_gears/red_alloy',
 		D: '#forge:tools/wrenches'
 	}).addMaterialInfo().id('firmalife:crafting/sweeper')
 
@@ -321,7 +325,7 @@ const registerFirmaLifeRecipes = (event) => {
 		'EE '
 	], {
 		A: '#forge:plates/steel',
-		B: 'vintageimprovements:redstone_module',
+		B: '#forge:small_gears/red_alloy',
 		C: '#forge:rods/steel',
 		D: '#forge:tools/wrenches',
 		E: '#forge:hoe_heads/steel'

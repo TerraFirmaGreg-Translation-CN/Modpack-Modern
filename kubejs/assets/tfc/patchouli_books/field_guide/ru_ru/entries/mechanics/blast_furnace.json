@@ -6,7 +6,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "$(thing)Доменная печь$() — это продвинутая установка, используемая для создания $(thing)Стали$(). Смешивая $(l:getting_started/finding_ores)Железные руды$(), $(l:tfg_tips/basic_automation)Кокс$() или $(l:beneath/ores_and_minerals#cursecoal)Антрацит$(), и $(thing)флюс$() в контролируемой горячей среде, вы можете создать металл, прочнее чугуна или кованого железа.$(br2)Чтобы получить доменную печь, вам сначала понадобится $(l:mechanics/crucible)Тигель$() и много $(thing)листов кованного железа$()."
+      "text": "$(thing)Доменная печь$() — это продвинутая установка, используемая для создания $(thing)Стали$(). Смешивая $(l:getting_started/finding_ores)Железные руды$(), $(l:tfg_tips/basic_automation)Кокс$() или $(l:beneath/ores_and_minerals#cursecoal)Антрацит$(), и $(thing)флюс$().$(br2)Чтобы получить доменную печь, вам сначала понадобится $(l:mechanics/crucible)Тигель$() и много $(thing)листов кованного железа$()."
     },
     {
       "type": "patchouli:crafting",
@@ -39,7 +39,7 @@
     {
       "type": "patchouli:image",
       "images": [
-        "tfc:textures/gui/book/gui/blast_furnace.png"
+      "tfc:textures/gui/book/gui/blast_furnace.png"
       ],
       "text": "Интерфейс доменной печи",
       "border": false

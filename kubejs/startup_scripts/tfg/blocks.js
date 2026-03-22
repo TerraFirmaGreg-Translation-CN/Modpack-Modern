@@ -16,9 +16,7 @@ const registerTFGBlocks = (event) => {
 	registerTFGWorldGenVenusDecoBlocks(event)
 	registerTFGWorldGenEuropaDecoBlocks(event)
 
-	registerTFGCasingBlocks(event)
 	registerTFGNuclearBlocks(event)
-
 
 	// Temporary, remove in 0.12
 	event.create('gtceu:ostrum_linear_accelerator')
@@ -30,4 +28,10 @@ const registerTFGBlocks = (event) => {
 		.tagBlock('gtceu:mineable/pickaxe_or_wrench')
 		.requiresTool(false)
 		.textureAll('tfg:item/deprecated')
+
+	event.create('gtceu:heat_exchanger')
+		.tagBlock('gtceu:mineable/pickaxe_or_wrench')
+		.requiresTool(false)
+		.textureAll('tfg:item/deprecated')
+
 }

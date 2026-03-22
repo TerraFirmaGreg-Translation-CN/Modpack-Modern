@@ -17,71 +17,7 @@ const registerGTCEURecipes = (event) => {
 	generateMixerRecipe(event, ['2x #tfg:stone_dusts'], ['gtceu:lubricant 20', "#tfg:clean_water 4000"],
 		[], null, Fluid.of('gtceu:drilling_fluid', 5000), 40, 16, 64, 'drilling_fluid')
 
-	//#region Quantum mainframe stack fix.
-	//
-	// Quantum Mainframes need 48x annealed copper wire but
-	// the stacking limit is 32 so instead allow 24x 2x.
-	//
-	// Frustratingly event.replaceInput doesn't allow for
-	// changing item counts, only types.
-	event.remove(/gtceu:circuit_assembler\/quantum_mainframe_zpm.*/)
-	event.recipes.gtceu.circuit_assembler('quantum_mainframe_zpm')
-		.itemInputs(
-			'2x gtceu:hssg_frame',
-			'2x gtceu:quantum_processor_computer',
-			'48x gtceu:smd_capacitor',
-			'24x gtceu:smd_inductor',
-			'24x gtceu:ram_chip',
-			'24x gtceu:annealed_copper_double_wire')
-		.inputFluids(Fluid.of('gtceu:tin', 576))
-		.itemOutputs('gtceu:quantum_processor_mainframe')
-		.duration(800)
-		.EUt(7680)
-
-	event.recipes.gtceu.circuit_assembler('quantum_mainframe_zpm_soldering_alloy')
-		.itemInputs(
-			'2x gtceu:hssg_frame',
-			'2x gtceu:quantum_processor_computer',
-			'48x gtceu:smd_capacitor',
-			'24x gtceu:smd_inductor',
-			'24x gtceu:ram_chip',
-			'24x gtceu:annealed_copper_double_wire')
-		.inputFluids(Fluid.of('gtceu:soldering_alloy', 288))
-		.itemOutputs('gtceu:quantum_processor_mainframe')
-		.duration(800)
-		.EUt(7680)
-
-	event.recipes.gtceu.circuit_assembler('quantum_mainframe_zpm_asmd')
-		.itemInputs(
-			'2x gtceu:hssg_frame',
-			'2x gtceu:quantum_processor_computer',
-			'12x gtceu:advanced_smd_capacitor',
-			'6x gtceu:advanced_smd_inductor',
-			'24x gtceu:ram_chip',
-			'24x gtceu:annealed_copper_double_wire')
-		.inputFluids(Fluid.of('gtceu:tin', 576))
-		.itemOutputs('gtceu:quantum_processor_mainframe')
-		.duration(800)
-		.EUt(7680)
-
-	event.recipes.gtceu.circuit_assembler('quantum_mainframe_zpm_asmd_soldering_alloy')
-		.itemInputs(
-			'2x gtceu:hssg_frame',
-			'2x gtceu:quantum_processor_computer',
-			'12x gtceu:advanced_smd_capacitor',
-			'6x gtceu:advanced_smd_inductor',
-			'24x gtceu:ram_chip',
-			'24x gtceu:annealed_copper_double_wire')
-		.inputFluids(Fluid.of('gtceu:soldering_alloy', 288))
-		.itemOutputs('gtceu:quantum_processor_mainframe')
-		.duration(800)
-		.EUt(7680)
-	//#endregion
-
-
-	// #region Superconductor
-	
-	// Move MV superconductor to mid-late MV instead of post-vac freezer
+	// #region Move MV superconductor to mid-late MV instead of post-vac freezer
 
 	event.remove({ id: 'gtceu:shaped/mv_chemical_bath' })
 	event.shaped('gtceu:mv_chemical_bath', [
@@ -116,6 +52,7 @@ const registerGTCEURecipes = (event) => {
 	// Move EV to after Uranium Reactor
 
 	event.remove({ id: 'gtceu:mixer/uranium_triplatinum' })
+	event.remove({ id: 'greate:mixing/integration/gtceu/mixer/uranium_triplatinum' })
 	event.recipes.gtceu.mixer('tfg:uranium_triplatinum')
 		.itemInputs(Item.of('gtceu:uranium_dust', 1), Item.of('gtceu:platinum_dust', 3))
 		.inputFluids(Fluid.of('gtceu:radon', 10))
@@ -123,6 +60,27 @@ const registerGTCEURecipes = (event) => {
 		.duration(20*10)
 		.EUt(GTValues.VA[GTValues.EV])
 		.circuit(4)
+
+	event.remove({ id: 'gtceu:alloy_blast_smelter/uranium_triplatinum' })
+	event.remove({ id: 'gtceu:alloy_blast_smelter/uranium_triplatinum_gas' })
+
+	event.recipes.gtceu.alloy_blast_smelter('tfg:uranium_triplatinum')
+		.itemInputs(Item.of('gtceu:uranium_dust', 1), Item.of('gtceu:platinum_dust', 3))
+		.inputFluids(Fluid.of('gtceu:radon', 10))
+		.outputFluids(Fluid.of('gtceu:molten_uranium_triplatinum', 576))
+		.duration(20*150)
+		.blastFurnaceTemp(4400)
+		.EUt(GTValues.VA[GTValues.EV])
+		.circuit(2)
+
+	event.recipes.gtceu.alloy_blast_smelter('tfg:uranium_triplatinum_gas')
+		.itemInputs(Item.of('gtceu:uranium_dust', 1), Item.of('gtceu:platinum_dust', 3))
+		.inputFluids(Fluid.of('gtceu:helium', 400), Fluid.of('gtceu:radon', 10))
+		.outputFluids(Fluid.of('gtceu:molten_uranium_triplatinum', 576))
+		.duration(20*100.5)
+		.blastFurnaceTemp(4400)
+		.EUt(GTValues.VA[GTValues.EV])
+		.circuit(12)
 
 	// Move Superconductor to EV and make them cheap
 
@@ -409,21 +367,6 @@ const registerGTCEURecipes = (event) => {
 		.duration(30 * 20)
 		.EUt(GTValues.VA[GTValues.LV])
 
-	// Ladder consistency
-	
-	const nonAdAstraLumber = Ingredient.of('#tfc:lumber').subtract('tfg:wood/lumber/aeronos').subtract('tfg:wood/lumber/strophar');
-
-	event.replaceOutput({ id: 'gtceu:assembler/ladder' }, 'minecraft:ladder', '8x minecraft:ladder')
-
-	event.replaceInput({ id: 'tfc:crafting/vanilla/ladder' }, '#tfc:lumber', nonAdAstraLumber)
-
-	event.recipes.gtceu.assembler('tfg:ladder_from_lumber')
-		.itemInputs(nonAdAstraLumber.withCount(7))
-		.itemOutputs('8x minecraft:ladder')
-		.circuit(7)
-		.duration(40)
-		.EUt(4)
-
 	// Pills
 	event.remove({ id: 'gtceu:canner/pack_paracetamol' })
 	event.remove({ id: 'gtceu:canner/pack_rad_away' })
@@ -454,4 +397,41 @@ const registerGTCEURecipes = (event) => {
 	event.shapeless('gtceu:magnetic_iron_plate', ['#forge:plates/iron', '8x minecraft:redstone'])
 	event.shapeless('gtceu:magnetic_iron_bolt', ['#forge:bolts/iron', '2x minecraft:redstone'])
 
+	// Reverting
+	event.smelting('minecraft:iron_ingot', '#forge:ingots/wrought_iron')
+		.id('tfg:revert_wrought_iron_ingot')
+	event.smelting('minecraft:copper_ingot', '#forge:ingots/annealed_copper')
+		.id('tfg:revert_annealed_copper_ingot')
+
+	// Heavy Oil at LV
+
+	event.remove({ id: 'gtceu:distillery/distill_heavy_oil_to_sulfuric_heavy_fuel' })
+
+	event.recipes.gtceu.distillery('tfg:sulfuric_heavy_fuel')
+		.inputFluids(Fluid.of('gtceu:oil_heavy', 50))
+		.outputFluids(Fluid.of('gtceu:sulfuric_heavy_fuel', 125))
+		.duration(20*2)
+		.EUt(GTValues.VA[GTValues.LV])
+		.circuit(1)
+
+	// Increase casing costs
+
+	event.replaceInput({ id: 'gtceu:shaped/casing_steel_pipe' }, '#forge:normal_fluid_pipes/steel', '#forge:huge_fluid_pipes/steel')
+	event.replaceInput({ id: 'gtceu:shaped/casing_steel_pipe' }, '#forge:plates/steel', '#forge:double_plates/steel')
+
+	// Modify HV Dynamo Hatch to be craftable before Cleanroom
+
+	event.recipes.gtceu.assembler('gtceu:voltage_coil_hv')
+		.itemInputs('#forge:rods/magnetic_steel', '16x #forge:fine_wires/black_steel')
+		.itemOutputs('gtceu:hv_voltage_coil')
+		.circuit(1)
+		.duration(20*20)
+		.EUt(GTValues.VA[GTValues.MV])
+
+	event.recipes.gtceu.assembler('gtceu:dynamo_hatch_hv')
+		.itemInputs('gtceu:hv_machine_hull', '2x #forge:springs/gold', '2x gtceu:ulpic_chip', 'gtceu:hv_voltage_coil')
+		.inputFluids('gtceu:sodium_potassium 1000')
+		.itemOutputs('gtceu:hv_energy_output_hatch')
+		.duration(20*20)
+		.EUt(GTValues.VA[GTValues.MV])
 }

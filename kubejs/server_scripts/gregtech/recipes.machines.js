@@ -326,20 +326,6 @@ function registerGTCEuMachineRecipes(event) {
 
 	// #region Other steam machines
 
-	removeMaceratorRecipe(event, 'macerate_hp_steam_extractor')
-	event.recipes.gtceu.shaped('gtceu:hp_steam_extractor', [
-		'BEB',
-		'CAC',
-		'DFD'
-	], {
-		A: 'gtceu:steel_brick_casing',
-		B: ChemicalHelper.get(TagPrefix.pipeSmallFluid, GTMaterials.TinAlloy, 1),
-		C: ChemicalHelper.get(TagPrefix.plate, GTMaterials.Steel, 1),
-		D: ChemicalHelper.get(TagPrefix.plate, GTMaterials.WroughtIron, 1),
-		E: '#forge:glass_panes',
-		F: ChemicalHelper.get(TagPrefix.ring, GTMaterials.BlackSteel, 1)
-	}).addMaterialInfo().id('gtceu:shaped/steam_extractor_steel')
-
 	removeMaceratorRecipe(event, 'macerate_hp_steam_macerator')
 	event.recipes.gtceu.shaped('gtceu:hp_steam_macerator', [
 		'BFB',
@@ -416,7 +402,7 @@ function registerGTCEuMachineRecipes(event) {
 	], {
 		A: 'gtceu:steel_brick_casing',
 		B: ChemicalHelper.get(TagPrefix.pipeSmallFluid, GTMaterials.TinAlloy, 1),
-		C: '#forge:drill_heads',
+		C: '#forge:mining_hammer_heads/steel',
 		D: ChemicalHelper.get(TagPrefix.rod, GTMaterials.WroughtIron, 1),
 		E: ChemicalHelper.get(TagPrefix.screw, GTMaterials.WroughtIron, 1)
 	}).id('gtceu:shaped/steam_rock_breaker_steel')
@@ -662,7 +648,7 @@ function registerGTCEuMachineRecipes(event) {
 	//#region Long distance pipes
 
 	event.recipes.gtceu.assembler('long_distance_item_pipe')
-		.itemInputs('1x #forge:large_item_pipes/polyvinyl_chloride', '4x #forge:plates/vanadium_steel')
+		.itemInputs('1x #forge:large_item_pipes/polyvinyl_chloride', '4x #forge:plates/stainless_steel')
 		.inputFluids(Fluid.of('gtceu:soldering_alloy', 72))
 		.itemOutputs('32x gtceu:long_distance_item_pipeline')
 		.EUt(GTValues.VA[GTValues.HV])
@@ -670,7 +656,7 @@ function registerGTCEuMachineRecipes(event) {
 		.duration(300)
 
 	event.recipes.gtceu.assembler('long_distance_fluid_pipe')
-		.itemInputs('1x #forge:large_fluid_pipes/vanadium_steel', '4x #forge:plates/polyvinyl_chloride')
+		.itemInputs('1x #forge:large_fluid_pipes/stainless_steel', '4x #forge:plates/polyvinyl_chloride')
 		.inputFluids(Fluid.of('gtceu:soldering_alloy', 72))
 		.itemOutputs('32x gtceu:long_distance_fluid_pipeline')
 		.EUt(GTValues.VA[GTValues.HV])
@@ -678,7 +664,7 @@ function registerGTCEuMachineRecipes(event) {
 		.duration(300)
 
 	event.recipes.gtceu.assembler('long_distance_item_endpoint')
-		.itemInputs('2x #forge:large_item_pipes/polyvinyl_chloride', '8x #forge:plates/vanadium_steel', '2x #forge:gears/stainless_steel')
+		.itemInputs('2x #forge:large_item_pipes/polyvinyl_chloride', '8x #forge:plates/stainless_steel', '2x #forge:gears/stainless_steel')
 		.inputFluids(Fluid.of('gtceu:soldering_alloy', 144))
 		.itemOutputs('2x gtceu:long_distance_item_pipeline_endpoint')
 		.EUt(GTValues.VA[GTValues.HV])
@@ -687,7 +673,7 @@ function registerGTCEuMachineRecipes(event) {
 		.addMaterialInfo(true, true)
 
 	event.recipes.gtceu.assembler('long_distance_fluid_endpoint')
-		.itemInputs('2x #forge:large_fluid_pipes/vanadium_steel', '8x #forge:plates/polyvinyl_chloride', '2x #forge:gears/stainless_steel')
+		.itemInputs('2x #forge:large_fluid_pipes/stainless_steel', '8x #forge:plates/polyvinyl_chloride', '2x #forge:gears/stainless_steel')
 		.inputFluids(Fluid.of('gtceu:soldering_alloy', 144))
 		.itemOutputs('2x gtceu:long_distance_fluid_pipeline_endpoint')
 		.EUt(GTValues.VA[GTValues.HV])
@@ -839,7 +825,21 @@ function registerGTCEuMachineRecipes(event) {
 		C: 'gtceu:hp_steam_furnace'
 	}).addMaterialInfo().id('gtceu:shaped/steam_oven')
 
-	event.replaceInput({ id: 'gtceu:shaped/hv_cutter' }, 'gtceu:red_steel_buzz_saw_blade', 'gtceu:diamond_buzz_saw_blade')
+	event.recipes.gtceu.shaped('gtceu:hv_cutter', [
+		'ABC',
+		'DEF',
+		'BAG'
+	], {
+		A: '#forge:single_cables/gold',
+		B: '#gtceu:circuits/hv',
+		C: 'gtceu:tempered_glass',
+		D: 'gtceu:hv_conveyor_module',
+		E: 'gtceu:hv_machine_hull',
+		F: '#forge:buzz_saw_heads/ultimet',
+		G: 'gtceu:hv_electric_motor'
+	}).id('gtceu:shaped/hv_cutter')
+
+	TFGHelpers.registerMaterialInfo('gtceu:hv_cutter', [GTMaterials.Rubber, 17, GTMaterials.Electrum, 12, GTMaterials.StainlessSteel, 11, GTMaterials.Silver, 6, GTMaterials.Ultimet, 4, GTMaterials.Gold, 2.5])
 
 	removeMaceratorRecipe(event, 'macerate_steam_input_bus')
 	event.recipes.gtceu.shaped('gtceu:steam_input_bus', ['A', 'B'], {

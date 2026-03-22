@@ -207,7 +207,12 @@ function processPlateDouble(event, material) {
 			.EUt(24)
 	}
 
-	addMaterialWelding(event, doublePlateItem, plateItem, plateItem, material, 4, 2);
+	let tier = 2;
+	// Allow double aluminium plates with LV machines
+	if (material === GTMaterials.Aluminium)
+		tier = 1;
+
+	addMaterialWelding(event, doublePlateItem, plateItem, plateItem, material, 4, tier);
 }
 
 /**
@@ -218,8 +223,8 @@ function processFoil(event, material) {
 	const foilItem = ChemicalHelper.get(TagPrefix.foil, material, 4)
 	const plateItem = ChemicalHelper.get(TagPrefix.plate, material, 1)
 
-	if (plateItem.isEmpty() || foilItem.isEmpty() || plateItem.hasTag('c:hidden_from_recipe_viewers'))
-		return;
+	if (plateItem.isEmpty() || foilItem.isEmpty() || plateItem.hasTag('c:hidden_from_recipe_viewers') || plateItem.hasTag('tfg:no_vintage_gen'))
+    	return;
 
 	event.custom({
 		type: "createaddition:rolling",

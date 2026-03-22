@@ -497,11 +497,6 @@ global.TFC_DISABLED_ITEMS = /** @type {const} */ ([
     "tfc:stone/knife_head/metamorphic",
     "tfc:stone/knife_head/sedimentary",
 
-    "tfc:stone/knife/igneous_extrusive",
-    "tfc:stone/knife/igneous_intrusive",
-    "tfc:stone/knife/metamorphic",
-    "tfc:stone/knife/sedimentary",
-
     "tfc:stone/axe_head/igneous_extrusive",
     "tfc:stone/axe_head/igneous_intrusive",
     "tfc:stone/axe_head/metamorphic",
@@ -744,6 +739,7 @@ global.TFC_MEAT_RECIPE_COMPONENTS = /** @type {const} */ ([
     { input: "tfg:food/raw_glacian_mutton", output: "tfg:food/cooked_glacian_mutton", name: "cooked_glacian_mutton" },
     { input: "tfg:food/raw_sniffer_beef", output: "tfg:food/cooked_sniffer_beef", name: "cooked_sniffer_beef" },
     { input: "tfg:food/raw_wraptor", output: "tfg:food/cooked_wraptor", name: "cooked_wraptor" },
+    { input: "tfg:food/raw_bison_meat", output: "tfg:food/cooked_bison_meat", name: "cooked_bison_meat" },
     { input: "wan_ancient_beasts:toxlacanth", output: "wan_ancient_beasts:cooked_toxlacanth", name: "cooked_toxlacanth" },
     { input: "tfg:food/raw_springling_collar", output: "tfg:food/cooked_springling_collar", name: "cooked_springling_collar" },
     { input: "tfg:food/raw_walker_steak", output: "tfg:food/cooked_walker_steak", name: "cooked_walker_steak" },
@@ -952,6 +948,38 @@ global.TFC_EQUIPMENT_METALS = /** @type {const} */ ([
     "black_steel",
     "red_steel",
     "blue_steel"
+]);
+
+global.TFC_METALS = /** @type {const} */ ([
+    "copper",
+    "bismuth_bronze",
+    "bronze",
+    "black_bronze",
+    "wrought_iron",
+    "steel",
+    "black_steel",
+    "red_steel",
+    "blue_steel",
+
+    "bismuth",
+    "brass",
+    "gold",
+    "rose_gold",
+    "silver",
+    "sterling_silver",
+    "nickel",
+    "zinc",
+    "tin",
+    "cast_iron"
+]);
+
+global.TFC_DOUGHS = /** @type {const} */ ([
+    "barley",
+    "maize",
+    "oat",
+    "rye",
+    "rice",
+    "wheat"
 ]);
 
  global.TFC_BIOMES = /** @type {const} */ ([

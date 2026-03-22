@@ -38,9 +38,18 @@ function registerTFGPrimitiveItems(event) {
 
 	event.create('tfg:armor_stand_arms')
 
+	event.create('tfg:copper_spindle')
+		.tag('tfg:tools/spindles')
+		.tag('tfc:usable_on_tool_rack')
+		.maxDamage(120)
+		.texture('tfg:item/copper_spindle')
+	event.create('tfg:copper_spindle_head')
+		.texture('tfg:item/copper_spindle_head')
+
+
 	event.create('tfg:harvest_basket')
 		.parentModel('tfg:item/harvest_basket')
-		.maxDamage(128)
+		.maxDamage(256)
 
 	event.create('tfg:aluminium_harvest_basket')
 		.parentModel('tfg:item/aluminium_harvest_basket')
@@ -101,9 +110,20 @@ function registerTFGPrimitiveItems(event) {
 	// Universal compost items
 	event.create('tfg:universal_compost_browns')
 		.tag('tfc:compost_browns_low')
+		.translationKey('item.tfg.universal_compost_browns')
 
 	event.create('tfg:universal_compost_greens')
 		.tag('tfc:compost_greens_low')
+		.translationKey('item.tfg.universal_compost_greens')
+
+	// Universal compost bag items
+	event.create('tfg:universal_compost_browns_bag')
+		.tag('tfc:compost_browns_high')
+		.translationKey('item.tfg.universal_compost_browns_bag')
+
+	event.create('tfg:universal_compost_greens_bag')
+		.tag('tfc:compost_greens_high')
+		.translationKey('item.tfg.universal_compost_greens_bag')
 
 	// Etched Diamond Etching Tip
 	event.create('tfg:etching_diamond_tip')
@@ -153,6 +173,31 @@ function registerTFGPrimitiveItems(event) {
 			"XXXXXXX   XXXX",
 			"XXXXXX   XXXXX",
 			"XXXXX   XXXXXX",
+			"XXXX   XXXXXXX",
+			"XXX   XXXXXXXX",
+			"XX   XXXXXXXXX",
+			"XX  XXXXXXXXXX",
+			"XXXXXXXXXXXXXX",
+			"XXXXXXXXXXXXXX"
+		])
+
+
+	event.create('tfg:spindle_head_mold', 'tfc:mold')
+        .capacity(72)
+		.texture("base", "tfg:item/mold/fired/spindle_head_empty")
+		.texture("fluid", "tfg:item/mold/fired/spindle_head_overlay")
+		.tag('tfc:fired_molds')
+		.tag('tfc:molds')
+		.fluidTagAccept('tfg:usable_in_spindle_head_mold')
+		.tfcccAllowedInMoldTable([
+			"XXXXXXXXXXXXXX",
+			"XXXXXXXXXXXXXX",
+			"XXXXXXXXXX  XX",
+			"XXXXXXXXX   XX",
+			"XXXXXX     XXX",
+			"XXXXX     XXXX",
+			"XXXX     XXXXX",
+			"XXXX    XXXXXX",
 			"XXXX   XXXXXXX",
 			"XXX   XXXXXXXX",
 			"XX   XXXXXXXXX",
@@ -216,6 +261,13 @@ function registerTFGPrimitiveItems(event) {
 		.tag('tfc:fire_clay_recycle_5')
 		.tag('tfc:molds')
 		.tag('tfc:unfired_pottery')
+		
+	event.create('tfg:unfired_spindle_head_mold')
+		.texture("tfg:item/mold/unfired/unfired_spindle_head_mold")
+		.tag('tfc:unfired_molds')
+		.tag('tfc:clay_recycle_5')
+		.tag('tfc:molds')
+		.tag('tfc:unfired_pottery')	
 	
 	event.create('tfg:unfired_small_gear_mold')
 		.texture("tfg:item/mold/unfired/unfired_small_gear_mold")

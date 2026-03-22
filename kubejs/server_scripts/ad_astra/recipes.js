@@ -65,13 +65,14 @@ const registerAdAstraRecipes = (event) => {
 	event.recipes.gtceu.shaped('ad_astra:oxygen_sensor', [
 		'AEA',
 		'BDC',
-		'AAA'
+		'FFF'
 	], {
 		A: '#forge:plates/red_alloy',
 		B: 'gtceu:activity_detector_cover',
 		C: 'gtceu:fluid_detector_cover',
 		D: 'gtceu:mv_machine_hull',
-		E: '#gtceu:circuits/mv'
+		E: '#gtceu:circuits/mv',
+		F: 'vintageimprovements:redstone_module'
 	}).addMaterialInfo().id('tfg:oxygen_sensor')
 
 	event.recipes.gtceu.laser_engraver('ad_astra:photovoltaic_etrium_cell_silicon')
@@ -195,14 +196,14 @@ const registerAdAstraRecipes = (event) => {
 		.inputFluids(Fluid.of('minecraft:water', 100))
 		.itemOutputs('#forge:ingots/desh')
 		.duration(400)
-		.EUt(120)
+		.EUt(GTValues.VA[GTValues.HV])
 
 	event.recipes.gtceu.chemical_bath('tfg:desh_cool_down_distilled_water')
 		.itemInputs('#forge:hot_ingots/desh')
 		.inputFluids(Fluid.of('gtceu:distilled_water', 100))
 		.itemOutputs('#forge:ingots/desh')
 		.duration(250)
-		.EUt(120)
+		.EUt(GTValues.VA[GTValues.HV])
 
 	// #endregion
 

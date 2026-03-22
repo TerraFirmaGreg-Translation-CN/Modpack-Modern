@@ -124,7 +124,7 @@ const registerAE2Recipes = (event) => {
 		'BC'
 	], {
 		A: 'ae2:basic_card',
-		B: 'minecraft:redstone_torch',
+		B: '#forge:plates/redstone',
 		C: 'ae2:calculation_processor'
 	}).addMaterialInfo().id('tfg:crafting/redstone_card')
 
@@ -2329,4 +2329,15 @@ const registerAE2Recipes = (event) => {
 		E: 'ae2:silicon_press'
 	}).id('tfg:shaped/not_so_mysterious_cube')
 
+	event.recipes.gtceu.macerator('tfg:sky_stone')
+		.itemInputs('#tfg:stone_types/suevite')
+		.itemOutputs('ae2:sky_dust')
+		.EUt(2)
+		.duration(100)
+
+	event.recipes.gtceu.macerator('tfg:sky_stone_slab')
+		.itemInputs('2x #tfg:stone_types/suevite')
+		.itemOutputs('ae2:sky_dust')
+		.EUt(2)
+		.duration(100)
 }

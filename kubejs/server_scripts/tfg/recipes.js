@@ -44,20 +44,25 @@ const registerTFGRecipes = (event) => {
 	registerTFGWaxRecipes(event)
 	registerTFGRubberRecipes(event)
 	registerTFGWoodRecipes(event)
+	registerTFGWoodenRecipes(event)
 	registerTFGKnappingRecipes(event)
 	registerTFGLeatherRecipes(event)
 	registerTFGClayRecipes(event)
 	registerTFGEquipmentRecipes(event)
 	registerTFGDyeRecipes(event)
 	registerTFGArtisanTableRecipes(event)
+	registerTFGHVMaterialRecipes(event)
+	registerTFGMoSiBRecipes(event)
 
 	registerTFGCasingRecipes(event)
+	registerTFGCircuitRecipes(event)
 	registerTFGEnderPearlRecipes(event)
 	registerTFGMultiblockRecipes(event)
 	registerTFGSteamBloomeryRecipes(event)
 	registerTFGElectronicComponentsRecipes(event)
 	registerTFGBakeliteRecipes(event)
 	registerTFGCoilRecipes(event)
+	registerTFGBouleRecipes(event)
 
 	registerTFGEarlyGasRecipes(event)
 	registerTFGBoilerRecipes(event)
@@ -91,4 +96,12 @@ const registerTFGRecipes = (event) => {
 
 	registerTFGVenusRecipes(event)
 	registerTFGBiochemRecipes(event)
+
+	registerTFGEtchingRecipes(event)
+	registerTFGMVMaterialRecipes(event)
+	registerTFGGemSlurriesProcessing(event)
+
+	registerTFGRepairKitRecipes(event)
+
+	registerTFGMaterialRemovePipesRecipes(event)
 }

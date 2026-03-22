@@ -7,6 +7,8 @@ const registerFramedBlocksRecipes = (event) => {
 	event.remove({ id: 'framedblocks:framing_saw/framed_torch' })
 	event.remove({ id: 'framedblocks:framed_soul_torch' })
 	event.remove({ id: 'framedblocks:framing_saw/framed_soul_torch' })
+	event.remove({ id: 'framedblocks:framed_obsidian_pressure_plate' })
+	event.remove({ id: 'framedblocks:framing_saw/framed_obsidian_pressure_plate' })
 
 	//#region Framed Iron Door
 	event.shaped('framedblocks:framed_iron_door', [
@@ -389,7 +391,7 @@ const registerFramedBlocksRecipes = (event) => {
 	event.recipes.gtceu.assembler('tfg:assembler/framedblocks/framed_cube')
 		.itemInputs('4x #minecraft:planks', '4x #forge:rods/wooden')
 		.circuit(8)
-		.itemOutputs('framedblocks:framed_cube')
+		.itemOutputs('4x framedblocks:framed_cube')
 		.duration(40)
 		.EUt(GTValues.VA[GTValues.ULV])
 

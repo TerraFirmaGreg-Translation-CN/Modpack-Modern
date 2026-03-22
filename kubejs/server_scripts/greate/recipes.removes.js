@@ -47,25 +47,18 @@ function removeGreateRecipes(event) {
 		event.remove({ id: `gtceu:extractor/extract_${tier}_gearbox` })
 		event.remove({ id: `gtceu:extractor/extract_${tier}_vertical_gearbox` })
 	})
-
-	event.remove({ id: 'greate:milling/integration/gtceu/macerator/macerate_marble'})
 	
 	event.remove({ id: 'gtceu:electrolyzer/decomposition_electrolyzing_andesite_alloy' })
 	event.remove({ id: 'gtceu:electrolyzer/decomposition_electrolyzing_chromatic_compound' })
 	
 	event.remove({ id: 'gtceu:shaped/andesite_alloy_shaft' })
 	event.remove({ id: 'gtceu:extractor/extract_andesite_alloy' })
-		
-	event.remove({ id: /^greate:mixing\/integration\/create\/.*/ })
-	event.remove({ id: /^greate:sawing\/integration\/create\/.*/ })
-	event.remove({ id: /^greate:splashing\/integration\/create\/.*/ })
-	event.remove({ id: /^greate:crushing\/integration\/create\/.*/ })
-	event.remove({ id: /^greate:milling\/integration\/create\/.*/ })
-	event.remove({ id: /^greate:compacting\/integration\/.*/ })
-	event.remove({ id: /^greate:pressing\/integration\/.*/ })
-	event.remove({ id: /^greate:shaped\/.*/ })
-	event.remove({ id: /^greate:shapeless\/.*/ })
 
+	event.remove({ id: /^greate:(mixing|sawing|splashing|crushing|milling)\/integration\/(create|createaddition|vintageimprovements|railways)\/.*/ })
+	event.remove({ id: /^greate:(compacting|pressing)\/integration\/.*/ })
+
+	event.remove({ mod: 'greate', type: 'minecraft:crafting_shaped' })
+	event.remove({ mod: 'greate', type: 'minecraft:crafting_shapeless' })
 	event.remove({ mod: 'greate', type: 'create:deploying' });
 	event.remove({ mod: 'greate', type: 'create:sequenced_assembly' });
 	event.remove({ mod: 'greate', type: 'gtceu:assembler' });
@@ -79,14 +72,21 @@ function removeGreateRecipes(event) {
 
 	event.remove({ id: 'greate:cutting/integration/create/cutting/runtime_generated/compat/minecraft/bamboo_planks_to_bamboo_button' })
 	event.remove({ id: 'greate:mixing/integration/gtceu/mixer/fire_charge' })
+
 	event.remove({ id: 'greate:milling/integration/gtceu/macerator/macerate_cocoa' })
 	event.remove({ id: 'greate:milling/integration/gtceu/macerator/macerate_honeycomb' })
 	event.remove({ id: 'greate:milling/integration/gtceu/macerator/macerate_honeycomb_block'})
 	event.remove({ id: 'greate:milling/integration/gtceu/macerator/quartz_sand_from_sand' })
 
+	event.remove({ id: 'greate:crushing/integration/gtceu/macerator/macerate_cocoa' })
+	event.remove({ id: 'greate:crushing/integration/gtceu/macerator/macerate_honeycomb' })
+	event.remove({ id: 'greate:crushing/integration/gtceu/macerator/macerate_honeycomb_block'})
+	event.remove({ id: 'greate:crushing/integration/gtceu/macerator/quartz_sand_from_sand' })
+
 	event.remove({ id: 'greate:mixing/brass_ingot' })
-	event.remove({ id: /^greate:.*\/integration\/createaddition/ })
-	event.remove({ id: /^greate:.*\/integration\/vintageimprovements/ })
+
+	event.remove({ id: 'greate:shaped/copper_diving_helmet' })
+	event.remove({ id: 'greate:shaped/copper_backtank' })
 
 	event.remove({ id: 'greate:cutting/integration/gtceu/cutter/cut_phosphorus_boule' })
 	event.remove({ id: 'greate:cutting/integration/gtceu/cutter/cut_phosphorus_boule_water' })
@@ -118,9 +118,9 @@ function removeGreateRecipes(event) {
 	event.remove({ id: 'greate:cutting/integration/gtceu/cutter/cut_nor' })
 	event.remove({ id: 'greate:cutting/integration/gtceu/cutter/cut_nor_water' })
 	event.remove({ id: 'greate:cutting/integration/gtceu/cutter/cut_nor_distilled_water' })
-	event.remove({ id: 'greate:cutting/integration/gtceu/cutter/cut_lpic_wafer' })
-	event.remove({ id: 'greate:cutting/integration/gtceu/cutter/cut_lpic_wafer_water' })
-	event.remove({ id: 'greate:cutting/integration/gtceu/cutter/cut_lpic_wafer_distilled_water' })
+	event.remove({ id: 'greate:cutting/integration/gtceu/cutter/cut_lpic' })
+	event.remove({ id: 'greate:cutting/integration/gtceu/cutter/cut_lpic_water' })
+	event.remove({ id: 'greate:cutting/integration/gtceu/cutter/cut_lpic_distilled_water' })
 	event.remove({ id: 'greate:cutting/integration/gtceu/cutter/cut_pic_wafer' })
 	event.remove({ id: 'greate:cutting/integration/gtceu/cutter/cut_pic_wafer_water' })
 	event.remove({ id: 'greate:cutting/integration/gtceu/cutter/cut_pic_wafer_distilled_water' })

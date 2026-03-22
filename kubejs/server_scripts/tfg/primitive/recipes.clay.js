@@ -51,6 +51,7 @@ function registerTFGClayRecipes(event) {
 		{ input: "firmalife:oven_bottom", output: "firmalife:cured_oven_bottom", name: "oven_bottom" },
 		{ input: "firmalife:oven_hopper", output: "firmalife:cured_oven_hopper", name: "oven_hopper" },
 		{ input: "tfg:unfired_rod_mold", output: "tfg:rod_mold", name: "rod_mold" },
+		{ input: "tfg:unfired_spindle_head_mold", output: "tfg:spindle_head_mold", name: "spindle_head_mold" },
 		{ input: "tfg:unfired_small_gear_mold", output: "tfg:small_gear_mold", name: "small_gear_mold" },
 		{ input: "tfg:unfired_nugget_mold", output: "tfg:nugget_mold", name: "nugget_mold" }
 	]);
@@ -126,7 +127,7 @@ function registerTFGClayRecipes(event) {
 	// Kaolinite Clay - regular smelting recipes can't have multiple inputs
 	event.recipes.gtceu.alloy_smelter('tfg:kaolinite')
 		.itemInputs('tfc:kaolin_clay')
-		.circuit(1)
+		.notConsumable('gtceu:ball_casting_mold')
 		.chancedOutput('tfc:powder/kaolinite', 2000, 0)
 		.duration(100)
 		.EUt(16)
@@ -134,6 +135,12 @@ function registerTFGClayRecipes(event) {
 	// Fire Clay
 	event.recipes.gtceu.alloy_smelter('tfg:cheaper_fire_clay')
 		.itemInputs('#forge:dusts/graphite', '4x tfc:kaolin_clay')
+		.itemOutputs('2x tfc:fire_clay')
+		.duration(600)
+		.EUt(GTValues.VA[GTValues.ULV])
+
+	event.recipes.gtceu.alloy_smelter('tfg:cheaper_fire_clay2')
+		.itemInputs('tfc:powder/graphite', '4x tfc:kaolin_clay')
 		.itemOutputs('2x tfc:fire_clay')
 		.duration(600)
 		.EUt(GTValues.VA[GTValues.ULV])
@@ -210,6 +217,8 @@ function registerTFGClayRecipes(event) {
 	// heating
 	event.recipes.tfc.heating('tfg:unfired_rod_mold', 1399)
         .resultItem('tfg:rod_mold')
+		event.recipes.tfc.heating('tfg:unfired_spindle_head_mold', 1399)
+        .resultItem('tfg:spindle_head_mold')
 	event.recipes.tfc.heating('tfg:unfired_small_gear_mold', 1399)
 		.resultItem('tfg:small_gear_mold')
 	event.recipes.tfc.heating('tfg:unfired_nugget_mold', 1399)

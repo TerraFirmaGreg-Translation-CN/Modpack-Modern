@@ -1,10 +1,288 @@
 # Changelog
 
 ## Unreleased
+### Changes
+### Bug fixes
+### Translation updates
+
+## [0.11.28] - 22-03-2026
+No, this isn't the worldgen update. That's version 0.12.
+### Breaking changes
+- Circuit change for Tier 1 Rocket Fin / ASM Alloy Mixer / Rocket Fin Tier 2 / Rocket Cone Tier 2 to avoid recipe conflicts @TomPlop
+- Chorus-Infused Ceramic Insulation now requires a fluix crystal instead of dust, to avoid a recipe conflict (#3411) @Pyritie
+- All other laser engraver lens recipes now require gem lenses instead of glass ones (#3460) @TomPlop
+- The Heat Exchanger needs to be broken and recrafted because of a namespace change @TomPlop
+- Fixed dust consistency for Redstone Etching Fluid but now it needs a lot more redstone to craft (#3486) @SpicyNoodle5
+### Changes
+- Cleaned up some of the stonecutter recipes so there should be fewer duplicates @Pyritie @SpicyNoodle5
+- Added equivalent assembler recipes for Immersive Aircraft crafting table recipes (#3410) @SpicyNoodle5
+- Changed the rain screen effect to a clear transparent texture instead of blue dots (#3422) @applenper
+- Cassiterite and Cassiterite Sand ores now smelt directly into 1 tin instead of 2, to match TFC @Pyritie
+- The highest tier airplanes now actually require stainless steel as their quest says, and tweaked some of the other aircraft recipes @Pyritie
+- Added more gem slurries for ore processing and lens crafting, although the Clean slurries won't be craftable until Venus (#3460) @TomPlop @SakuraKitsurugi
+- Sped up the crafting times of basalt fiber insulation and silicon carbide (#3460) @TomPlop
+- More balance changes to the new large boilers, and added EMI tabs for the information (#3460) @TomPlop
+- Added fuels for trains! Like with solid fuel, liquid fuels make your train go faster, except fluids have to be in a separate Fuel Tank. Most combustible liquid fuels work. (#3273) @SakuraKitsurugi
+- Increased the speed and acceleration of fuelled trains to double their unfuelled stats @Pyritie
+- Added recycling recipes for Input/Output Hatches/Buses (#3470) @Nixieeunrare
+- Added recipes to craft more locometal items before LV machines, and improved locometal crafting in general (#3462, #3484) @SakuraKitsurugi
+- Added crafting for copycat pressure plates and recycling for most copycat blocks (#3463) @SakuraKitsurugi
+### Bug fixes
+- Fixed the field guide not working @Mqrius
+- Fixed not being able to put the copper spindle on a tool rack (#3445) @DrEthan77
+- Fixed not being able to macerate Raw Suevite @Pyritie
+- Fixed René-41 so it makes twice as much dust in the mixer, but halved the duration of the EBF/cooling recipes and doubled the cost of the foils per coil, so the end result is the same (#3446) @Pyritie
+- Fixed being able to stonecut slabs back into full blocks (#3156) @Pyritie 
+- Fixed being able to dupe chorus fruit by repeatedly breaking and placing a chorus flower (#3433) @Pyritie
+- Fixed Keratophyre missing a texture when knapping (#3418) @Pyritie
+- Fixed High Voltage Coils only requiring 1 black steel fine wire instead of 16 like the others @Pyritie
+- Fixed not being able to use vintage alcohols for general alcohol crafts (#3464) @lysteryale
+### Translation updates
+- Chinese (simplified) @jmecn
+- Ukranian @MetEnBouldry @furrydenis, s5edranner
+- Russian @Nixieeunrare, Polimerka, mihikav, Regrifone, Arka
+
+## [0.11.27] - 13-03-2026
+### Changes
+- Added new large boilers that will soon replace the original gregtech boilers. These ones can accept more kinds of water and booster fluids to push your boilers further - check the new quest for more information. (#3360) @TomPlop
+- Added a new Large Steam Turbine that has a base production of 2048 EU/t but can't accept higher Rotors than EV @TomPlop
+- Removed vanilla advancements @Mqrius
+- Added copper spindle, with much more durability than the clay one (#3345) @DrEthan77
+- Phantom Silk now counts as dark cloth instead of light cloth for the sewing table (#3376) @Pyritie
+- New textures for the blue steel diving equipment to match the blue steel armor (#3385) @Facundo46
+- TFC jams can now also use honey instead of only sugars (#3362) @SakuraKitsurugi
+- Changed the recipe of Steel Pipe Casing and Magnalium Turbine Casing @TomPlop
+- Added a Repair Kit item so you can finally repair your GregTech Tools! Recipes for armor and other things coming soon. @TomPlop @Redeix
+- Changed the HV Dynamo Hatch to be craftable before the Cleanroom @TomPlop
+- Added a 16A HV Dynamo Hatch @TomPlop
+- Adjusted how fast the player heats up and cools down @Pyritie
+- Lowered the fluid temperatures of polysilicon, bakelite, and phenolic resin @Pyritie
+### Bug fixes
+- Fixed crashes with the Greate encased fan @Electrolyte220
+- Fixed EMI bookmarked recipe tooltip when GT machine UI is open @Mqrius
+- Fixed the "is supported/won't collapse" tooltips to work with the collapsible performance improvements in the previous update @Mqrius
+- Fixed livestock breeding failing often @Mqrius
+- Fixed a crash with the rotten voiding cover @Mqrius
+- Fixed the EMI recipes for the Artisan Table @Mqrius
+- Fixed arsenic bronze drops from primitive illagers (#3386) @Mqrius
+- Fixed a ton of log spam relating to the new steam n rails update (#3361) @SakuraKitsurugi 
+- Fixed keratophyre brick fence being usable as a facade cover (#3365) @Pyritie
+- Fixed some of the Diamond-Tipped Mo-50 Re tools having incorrect or missing crafting recipes @TomPlop
+- Maybe fixed being able to use shipping containers on trains (#3402) @Pyritie
+### Translation updates
+- Chinese (simplified) @jmecn
+- Ukranian @MetEnBouldry @furrydenis
+
+## [0.11.26] - 10-03-2026
+### Changes
+- Liquid concrete mixer recipes now have circuits, to fix some conflicts (#3264) @Pyritie
+- Primitive Illagers now drop new unique Arsenic Bronze tools instead of cobalt brass @Pyritie
+- Added upgrade and repair recipes for hiking boots (#3296) @SakuraKitsurugi
+- Improved performance of Supports and TFC animals @Mqrius
+- Added ways to convert mars water into normal water (#3298) @Pyritie
+- Added missing electrolyzer recipe for Sodium Sulfate (#3302) @sqcode06
+- Obsidian can now be picked up with any tier of tool @Pyritie
+- Quest updates @Pyritie @TomPlop
+### Bug fixes
+- Fixed crafting table recipes involving a knife being removed (#3291) @Pyritie
+- Fixed tools having 1/6 of their intended durability (#3329) @TomPlop
+- Fixed flint tools being uncraftable @Pyritie
+- Fixed some recipe conflicts with the Hexidecrubrometer and AES insulation roll (#3288) @Tipy4
+- Fixed not being able to feed some carnivorous dinosaurs (#3288) @Tipy4
+- Fixed the chemical reactor Butyraldehyde recipe not being moved to the correct circuit (5) (#3288) @Tipy4
+- Fixed foxes crashing the game when fed meal bags and other foods that are supposed to return an item to the player (#3277) @Mqrius
+- Fixed recipe conflict for copper-bonded alumina circuit board (#3314) @TomPlop
+- Fixed duplicate recipes for ceramic/epoxy circuit boards (#3306) @TomPlop
+- Fixed maintenance hatch tooltips showing an error message (#3329) @TomPlop
+- Fixed some quests (#3304) and new material names (#3315) @Pyritie
+- Potentially fixed rockets sometimes killing the second passenger (#3317) @BlueBoat29
+- Fixed uncraftable RTM alloy coil (#3333) @TomPlop
+- Fixed not being able to craft crimsene and warpane crystals in a vat (#3318) @Pyritie
+- Fixed the aluminium sulfide recipe not working (#3302) @sqcode06
+- Fixed the block texture of the solar panel casings (#3328) @Pyritie
+- Fixed holding Ctrl over seeds would open the wrong page of the field guide (#3348) @lysteryale
+- Fixed rotten voiding cover not able to be placed on machines (#3343) @gustovafing
+- Fixed not being able to use a wrench to pick up GT lamps (#3243) @Pyritie
+- Fixed bioreactor glass connected textures @Pyritie
+- Fixed factory gauges to use the diode tag instead of just the diode item (#3353) @Bumperdo09
+- Fixed the igneous felsic dust recipes so they aren't an infinite source of sulfur @Pyritie
+### Mod updates
+#### EMI++
+- Added (#3285) @SakuraKitsurugi
+#### Sacks 'n' Such
+- Fixed sacks' voiding not properly working @Traister101
+- Fixed issue with hiking boots' slowdown prevention sometimes not working @Traister101
+- Fixed crossbows not pulling ammo from the Quiver @Traister101
+#### Greate
+- Fixed encased fans voiding input items when there's not enough fluid in the fan to process the entire stack
+- Fixed encased fans not processing faster at different RPMs
+#### Digger Helmet
+- Added higher tiers of helmets
+#### Steam 'n' Rails
+- Moss carpets and snow can now "encase" rails
+- Many many new locometal blocks (with TFG recipes (#3340) @SakuraKitsurugi)
+- And [lots of bugfixes](https://www.curseforge.com/minecraft/mc-mods/create-steam-n-rails/files/7698358)
+#### AE2
+- Pressing a hotkey over an entry in a terminal will in-world highlight the locations where item stacks are stored @ko-lja
+- The crafting confirmation and status screens can now have their height changed @ko-lja
+#### TerraFirmaCraft
+- Fixed some issues with double crops
+- Fixed cat genetics
+- Fixed to animals running around constantly @Mqrius
+- Fixed krummholz not spawning @Pyritie
+### Translation updates
+- Ukranian @MetEnBouldry @furrydenis
+- Chinese (simplified) @jmecn
+
+## [0.11.25] - 06-03-2026
+### MV Changes
+- Greatly expanded the second half of MV, mostly around crafting silicon boules and lenses for wafer engraving
+- Silicon rubber is also now mandatory
+- The recipe for Kanthal coils has changed
+- Plastic circuit boards have been replaced with ceramic circuit boards
+- Added a new line for gem slurries, different than the existing one that comes with GregTech
+### HV Changes
+- The moon is now mandatory
+- The cleanroom recipe has changed and now requires Rhenium which can be found either in the overworld deserts or as an ore processing byproduct from Desh
+- The recipe for Nichrome coils has changed
+- Nichrome coils are now required for Titanium
+- Added earth-based infinites for iron, magnesium, and potassium (we are forcing you to learn more geology for this one)
+- Rutile is harder to get and the titanium loop now requires two rutile dust per input instead of one, to obey conservation of mass (reminder that the moon has huge Ilmenite, Armalcolite, and Desh veins, and that Bauxite has a special ore processing line that may interest you!)
+- HV also unlocks more ways to craft the ceramic circuit boards for cheaper
+### Other Breaking Changes
+- Tools higher than colored steel have been reworked and most of them have been removed or had their IDs changed, so your tools may disappear. Tool stats have also been changed across the board -- sorry, your colored steel tools are actually balanced now.
+- Turbine rotors have been completely changed - most of the old ones no longer exist. Be sure to charge up your batteries and recycle your old rotors before updating.
+- Soldering alloys now have tiers, so if you were relying on liquid tin, that's no longer an option past a certain point, and higher tiers need different solders
+- "Etching fluids", like sodium persulfate and iron III chloride now also have tiers
+- Various fluid and item pipes have been *hidden* but not removed, to clean up the sheer quantity of them. Fluid pipes' stats have been buffed everywhere. Eventually we'd like to completely remove these extra pipes but only if it's possible to do so without affecting all the setups you have
+### New mods
+- Added Create: Copycats+ compat. (#3232) @SakuraKitsurugi
+- Added optional compatibility for Create: Extra Gauges (#3159) @TreyR9
+### Changes
+- Increased basic harvest basket durability to 256 @Redeix
+- Remove durability from trowels @Redeix
+- Harvest baskets can now harvest from firmalife greenhouse trellis, bonsai, and hanging planters. @Redeix
+- Added back Accumulators, which are basically batteries that can go on contraptions (like trains!) and use a Portable Energy Interface. Now, you can pull energy out of them using a GregTech energy converter! (#2460) @DrEthan77
+- Scythes can now harvest and replant crops in Firmalife greenhouse planters @Ujhik
+- Added "vintage" alcohols made from letting your Aged Alcohols age even further, providing even stronger buffs (#3233) @lysteryale
+- Huntmaster illagers no longer drop backpacks @Pyritie
+- Added bamboo lumber and added consistency for all wood-related recipes, please let us know if there's any issues (#3211) @Inceitious
+- Added bakelite recipes for crafting ULV/LV hatches and buses
+- (Plain) stone dust now centrifuges into other stone dusts @Pyritie
+### Bug fixes
+- Fixed multiple exceptions being thrown during tooltip creation (#3188) @Nebby1999
+- Fixed lag when holding certain items in your off-hand (#324) @Mqrius
+- Fixed rails on maps on MacOS @Mqrius
+- Fixed stacks of drums not applying their hot/cold/floating effects (#2814) @Mqrius
+- Fixed a desync with ingot mold temperatures between server and client (#2593) @Ujhik
+- Fixed GregTech drums not draining from wood barrels when there's fluid in the drum (#2835) @Mqrius
+- Fixed desync issue when "drinking" from an Ad Astra Gas Tank in your off-hand (#3059) @Mqrius
+- Fixed recycling dupe with metal pressure plates (#3230) @SakuraKitsurugi
+- Fixed not being able to break Incoloy MA-956 frames with the tools available in EV (#3194) @Pyritie
+- Fixed not being able to craft wooden tongs with the TFC stone knife you can rarely find in ruins (#3222) @Pyritie
+- Fixed TFC "pure" fertilisers having inconsistent fertiliser values (#3165) @Pyritie
+- Fixed recipe collision with buckets and Freedom gun (#3279) @Tipy4
+### Translation updates
+- Chinese (simplified) @jmecn
+- Chinese (traditional) @CrazyO9
+- Ukranian @MetEnBouldry @furrydenis
+- Russian @Nixieeunrare
+- Polish @Xtrial-01
+
+## [0.11.24] - 22-02-2026
+### Notice
+- The next major version will include many changes to MV progression (and minor changes to HV)
+### Changes
+- Improved color formatting in some quests @Eilandor
+- Quarktech chestplate is now breathable in space (we'll update it properly later) (#3150) @Mqrius
+- Moved the humus from leaves recipe from the extractor to compressor @Pyritie
+- Blaze burners now provide zero passive heat (#2671) @Ujhik
+- Scythes now replant sticks when needed (like for tomatoes and green beans), taking sticks from the drops or player inventory as necessary @Ujhik
+- Improved performance for TFC Ambiental @Mqrius
+### Bug fixes
+- Fixed several missing wood-related recipes like the climate station and mallet (#3155) @Inceitious
+- Fixed some tongs melting into unusable TFC metal fluids @Pyritie
+- Fixed drying tea ingredients in a food processor outputting nothing (#3147) @Pyritie
+- Fixed the overworld to beneath teleportation cooldown being reduced based on how many players are online @Mqrius
+### Translation updates
+- Chinese (simplified) @jmecn
+
+## [0.11.23] - 21-02-2026
+### Notice
+- The next major version will include many changes to MV progression (and minor changes to HV)
+### Changes
+- Changed recipes of almost all items for Create's Logistics @Pyritie
+- The rolling mill is no longer mandatory for progression, only merely very recommended @TomPlop
+- Increased the amount of Plant Balls when centrifuging Conifer Rosin @TomPlop
+- Added recipe for Glowing Dye early (#3095) @SakuraKitsurugi
+- Added missing recipe for the Linked Controller @Pyritie
+- Removed the Steam Extractor because it was basically useless and just confused people @Pyritie
+- Fixed the Material Holder being uncraftable due to a requirement dependency loop @Pyritie
+- Reduced the number of Refractory Bricks that Cupronickel Coils require @Pyritie
+- Fixed confusing behaviour with the Helve Hammer where it sometimes wouldn't process "intermediate" items like Refined Iron Blooms and High Carbon Ingots (#2584) @Ujhik
+- Supply carts now don't apply debuffs to the player if a cart is overburdened, instead applying those debuffs to the animal. This avoids some weird behaviour and also buffs the "weight" of items that can be carried in a supply cart by 3x (#2997) @Ujhik
+- Improved performance of blocks checking if they're oxygenated @Mqrius
+- Added Bamboo Lumber and unified wood-related recipes in the backend (please let us know if anything's wrong!) (#3002) @Inceitious
+- Added a recipe to convert iodine and methane back into iodomethane (#3129) @Pyritie
+- MV Machine Hulls shaped recipe needs 4 Bakelite Plates and 2 Aluminum Plates but can be crafted with Bakelite in an Assembler @TomPlop
+- MV Hatches and Buses now can be crafted with Bakelite @TomPlop
+- Quadrupled the amount of railgun ammo you get per craft @TomPlop
+- Distilling heavy oil into sulfuric heavy oil residue is now LV instead of MV @TomPlop
+### Bug fixes
+- Fixed all the default Greate-related recipes @Pyritie
+- Fixed several crashes relating to the encased fan and the mechanical mixer @Electrolyte220
+- Fixed Uranium Triplatinum not requiring Radon in the Alloy Blast Smelter @TomPlop
+- Added a workaround for oil spouts sometimes giving a fluid that couldn't be used in non-GregTech machines @Pyritie
+- Fixed an issue with server overrides sometimes not applying to server pack exports (#3088) @Mqrius
+- Fixed more startup issues when the system language is set to Turkish (#3099) @Pyritie
+- Fixed a crash when using a schematicannon to place a chain conveyor (#3092) @Pyritie
+- Fixed not being able to recycle fire bricks (#3135) @Pyritie
+- Fixed the T2 double rocket not being able to go to Mars @BlueBoat29
+### Translation updates
+- Chinese (simplified) @jmecn
+- German @Enderderschander
+- Ukranian @MetEnBouldry
+- Japanese @sakura-gondra
+- Russian @Nixieeunrare
+
+## [0.11.22] - 16-02-2026
+### Changes
+- GregTech updated to 7.5.2, see [its changelog](https://github.com/GregTechCEu/GregTech-Modern/releases/tag/v7.5.0-1.20.1) for more details
+- Blaze burners no longer work outside of Earth @Mqrius @thederpysockdude123
+- High Tier saws can Silk Harvest Ice (#3019) @Nebby1999
+- Colored small vessels now have new textures backported from 1.21 TFC
+- The alloy smelter kaolin clay to powder recipe now uses a mold instead of a circuit (since steam machines don't have circuits) @Pyritie
+- Added more of Create's decorative stone blocks to the Domum whitelist
+- Drinkable alcohols can now be drank even when your hydration is full @Ujhik
+- The Strength effect is now exclusive to wines, but all wines also now have an additional effect! @Pyritie
+- Made deployers cheaper @Pyritie
+### Bug fixes
+- Fixed the blur effect after being downed not going away
+- Fixed arrow duplication (#2089) @Ujhik
+- Fixed the blaze burner liquid fuel list not properly working on servers @Mqrius
+- Fixed dimension indicator icons duplicating when increasing the energy tier display @BlueBoat29
+- Fixed the face mask new curio slot not actually preventing hazards @Bumperdo09
+- Fixed mars crop seeds not going in the seed pouch (#3058) @Pyritie
+- Fixed not being able to make aluminium double plates with LV machines (#3030) @Pyritie
+- Fixed not being able to recycle unfired firmalife oven parts @Pyritie
+- Fixed not being able to fire scraping knife molds (#3038) @Pyritie
+- Fixed some tree types not contributing to ambient bird noises @Pyritie
+- Fixed startup issues when the system language is set to Turkish @Pyritie
+- Fixed a bunch of quests @Pyritie @Eilandor
+### Translation updates
+- Russian @Nixieeunrare
+- German @Enderderschander
+- Ukranian @MetEnBouldry
+- Chinese (simplified) @jmecn
+
+## [0.11.21] - 09-02-2026
 ### Breaking changes
 If you missed it, [0.11.19](https://github.com/TerraFirmaGreg-Team/Modpack-Modern/releases/tag/0.11.19) and [0.11.20](https://github.com/TerraFirmaGreg-Team/Modpack-Modern/releases/tag/0.11.20) were Alpha versions with many important breaking changes. Be sure to read their changelogs as well!
+- And because we didn't make it a big enough deal yet, **the railgun now works on servers**!
 - Greate Encased Fans now work differently. Water (or distilled water) needs to be pumped into the encased fan itself, instead of having a source block in front. Items also must be on a Depot or Belt in order to be washed, instead of the floor. Processing time decreases with fan RPM. Regular water produces fewer byproducts than distilled water.
+- Some recipe changes to AE2 mainly to ExtandedAE to avoid conflicts, check your patterns
 ### Changes
+- Large Solar Array MK2 is now craftable after reaching Mars rather than at the end of the Fission Line
 - Added artisan table recipes for all pipe mold sizes (#2983) @Redeix
 - You can now pick up foxes @Pyritie
 - Added glass batch to glass vial extruder recipe (#2999) @Inceitious
@@ -13,7 +291,12 @@ If you missed it, [0.11.19](https://github.com/TerraFirmaGreg-Team/Modpack-Moder
 - Added soybean + sea water to soy mixture recipe (#2984) @Redeix
 - Added optional [Chimes](https://www.curseforge.com/minecraft/mc-mods/chimes) compat. (#2973) @TreyR9
 - Added optional [Create: Sound of Steam](https://www.curseforge.com/minecraft/mc-mods/create-sound-of-steam) compat (#2324) @samtsa
+- Added Universal Bags of Composts (#3016) @Nebby1999
 ### Bug fixes
+- Fixed the T1 empty fuel rod being uncraftable (#3008) @TomPlop
+- Fixed fission fuel rods looking for the wrong items to recycle @TomPlop
+- Added a missing recipe for the Heat Input Hatch that was making progressing on the Fission line after Uranium impossible @TomPlop
+- Added a missing recipe for the Titanium Exhaust Vent that was making building the Cooling Tower impossible @TomPlop
 - Fixed incorrect mechanical mixer recipes for weak and regular colored steel dust (#2977) @Pyritie
 - Fixed cobble breaking into two cobble blocks (#2980) @Pyritie
 - Fixed a recycling dupe with maintenance hatches (#3003) @Pyritie

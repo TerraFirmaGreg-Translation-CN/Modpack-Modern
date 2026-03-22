@@ -18,7 +18,10 @@ const registerHotOrNotItemTags = (event) => {
         event.add('tfchotornot:hot_whitelist', magma)
     })
     
-
+    global.TFC_METALS.forEach(metal => {
+        event.add('tfchotornot:tong_parts', `tfchotornot:tong_part/${metal}`)
+    })
+    
     event.add('firmalife:usable_on_oven', '#tfchotornot:insulating')
 
     event.add('tfg:insulating_container', 'gtceu:ulv_super_tank')
@@ -81,6 +84,9 @@ const registerHotOrNotFluidTags = (event) => {
     event.add("tfchotornot:gaseous_whitelist", 'gtceu:hydrogen')
     event.add("tfchotornot:gaseous_whitelist", 'gtceu:coal_gas')
     event.add("tfchotornot:gaseous_whitelist", 'gtceu:methane')
+
+    event.add("tfchotornot:fluid_whitelist", '#firmalife:oils')
+    event.add("tfchotornot:fluid_whitelist", '#tfg:oil_fluids')
 }
 
 const registerHotOrNotBlockTags = (event) => {

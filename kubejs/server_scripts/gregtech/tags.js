@@ -37,6 +37,18 @@ function registerGTCEUItemTags(event) {
     event.add("tfc:saws", "#forge:tools/buzzsaws");
     event.add("tfc:saws", "#forge:tools/chainsaws");
 
+    const saws = event.get('forge:tools/saws').getObjectIds().concat(event.get('forge:tools/chainsaws').getObjectIds());
+    saws.forEach(sawId =>
+    {
+        const id = sawId.getNamespace() + ":" + sawId.getPath();
+        if(global.ICE_SAW_BLACKLIST.includes(id) || Item.of(sawId).hasTag('forge:tools/buzzsaws'))
+        {
+            return;
+        }
+
+        event.add("tfg:silk_harvest_ice", id);
+    });
+
     global.GTCEU_CASTING_MOLDS.concat(global.TFG_CASTING_MOLDS).forEach((mold) => {
         event.add("gtceu:casting_molds", mold);
     });
@@ -57,6 +69,19 @@ function registerGTCEUItemTags(event) {
     //greens
     event.add('tfc:compost_greens', 'gtceu:bio_chaff');
     event.add('tfc:compost_greens', 'gtceu:plant_ball');
+
+    // lamp tag for EMI++
+    global.MINECRAFT_DYE_NAMES.forEach(color => {
+        event.add('gtceu:lamps', `gtceu:${color}_lamp`)
+	    event.add('gtceu:lamps', `gtceu:${color}_borderless_lamp`)
+    })
+
+    // any rubber plate
+    event.add('tfg:rubber_plates', '#forge:plates/rubber', '#forge:plates/silicone_rubber', '#forge:plates/styrene_butadiene_rubber')
+
+    // Remove slurry bucket
+
+    event.add('c:hidden_from_recipe_viewers', 'gtceu:ruby_slurry_bucket', 'gtceu:green_sapphire_slurry_bucket', 'gtceu:sapphire_slurry_bucket')
 }
 
 /** @param {TagEvent.Block} event  */
@@ -97,11 +122,26 @@ function registerGTCEUBlockTags(event) {
     event.add("gtceu:cleanroom_doors", "ad_astra:calorite_sliding_door");
     event.add("gtceu:cleanroom_doors", "ad_astra:airlock");
 
+    event.remove("forge:needs_netherite_tool", "gtceu:incoloy_ma_956_frame");
+
+    event.add("c:hidden_from_recipe_viewers", "gtceu:bronze_large_boiler")
+    event.add("c:hidden_from_recipe_viewers", "gtceu:steel_large_boiler")
+    event.add("c:hidden_from_recipe_viewers", "gtceu:titanium_large_boiler")
+    event.add("c:hidden_from_recipe_viewers", "gtceu:tungstensteel_large_boiler")
+
     // Groups up concrete blocks into tags.
     Object.entries(global.GTCEU_CONCRETE_BLOCKS).forEach(([type, ids]) => {
         event.add(`tfg:gtceu_concrete_blocks/${type}`, ids);
         event.add('tfg:gtceu_concrete_blocks', ids);
     });
+
+    // lamp tag for EMI++
+    global.MINECRAFT_DYE_NAMES.forEach(color => {
+        event.add('gtceu:lamps', `gtceu:${color}_lamp`)
+	    event.add('gtceu:lamps', `gtceu:${color}_borderless_lamp`)
+    })
+
+    event.add('gtceu:mineable/pickaxe_or_wrench', '#gtceu:lamps')
 }
 
 /** @param {TagEvent.Fluid} event  */
@@ -127,4 +167,8 @@ function registerGTCEUFluidTags(event) {
     
     event.add("c:hidden_from_recipe_viewers", "tfg:molten_weak_red_steel");
     event.add("c:hidden_from_recipe_viewers", "tfg:molten_weak_blue_steel");
+
+    event.add("c:hidden_from_recipe_viewers", "gtceu:ruby_slurry");
+    event.add("c:hidden_from_recipe_viewers", "gtceu:green_sapphire_slurry");
+    event.add("c:hidden_from_recipe_viewers", "gtceu:sapphire_slurry");
 }

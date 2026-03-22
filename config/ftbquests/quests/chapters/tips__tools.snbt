@@ -424,7 +424,12 @@
 			y: 3.0d
 		}
 		{
-			dependencies: ["7FA5B6354A49C396"]
+			dependencies: [
+				"7FA5B6354A49C396"
+				"3C173357029AB649"
+				"4CD3F04793CE47A2"
+			]
+			dependency_requirement: "one_completed"
 			description: ["{quests.tfg_tips.backpack_materials.desc}"]
 			id: "7178843BCD50A012"
 			size: 1.0d
@@ -593,12 +598,18 @@
 				{
 					id: "34DEDF3B7F0DB3BC"
 					item: "gtceu:item_tag_filter"
+					optional_task: true
 					type: "item"
 				}
 				{
 					id: "35CAF01644B8D9A2"
 					item: "gtceu:fluid_tag_filter"
+					optional_task: true
 					type: "item"
+				}
+				{
+					id: "45C7E66106E323A2"
+					type: "checkmark"
 				}
 			]
 			title: "{quests.high_voltage.250_iq.title}"
@@ -801,25 +812,25 @@
 			]
 			icon: {
 				Count: 1
-				id: "gtceu:iv_copper_drill"
+				id: "gtceu:lv_blue_steel_drill"
 				tag: {
 					Charge: 2147483647L
 					Damage: 0
 					DisallowContainerItem: 0b
 					GT.Behaviours: {
-						AoEColumn: 4
-						AoELayer: 8
-						AoERow: 4
-						MaxAoEColumn: 4
-						MaxAoELayer: 8
-						MaxAoERow: 4
+						AoEColumn: 1
+						AoELayer: 0
+						AoERow: 1
+						MaxAoEColumn: 1
+						MaxAoELayer: 0
+						MaxAoERow: 1
 						TorchPlacing: 1b
 					}
 					GT.Tool: {
 						DefaultEnchantments: [ ]
-						HarvestLevel: 2
-						MaxDamage: 5543
-						ToolSpeed: 6.0f
+						HarvestLevel: 3
+						MaxDamage: 2411
+						ToolSpeed: 11.0f
 					}
 					HideFlags: 2
 					MaxCharge: 2147483647L
@@ -885,7 +896,11 @@
 			y: 14.0d
 		}
 		{
-			dependencies: ["57FE828BAA8F6276"]
+			dependencies: [
+				"57FE828BAA8F6276"
+				"40408FFD02134148"
+			]
+			dependency_requirement: "one_completed"
 			description: ["{quests.tfg_tips.hazmat.desc}"]
 			id: "784A0743B257EAEB"
 			tasks: [
@@ -2502,7 +2517,10 @@
 			y: 1.0d
 		}
 		{
-			dependencies: ["7FA5B6354A49C396"]
+			dependencies: [
+				"7FA5B6354A49C396"
+				"560B17BFBE8D477D"
+			]
 			description: ["{quests.tfg_tips.first_sacks.desc}"]
 			guide_page: "tfc:field_guide tfc:sns/leather_sack"
 			id: "509C064AA92FD78F"
@@ -2576,6 +2594,7 @@
 			dependencies: [
 				"509C064AA92FD78F"
 				"234B68E86F72C29E"
+				"4CD3F04793CE47A2"
 			]
 			dependency_requirement: "one_completed"
 			description: ["{quests.tfg_tips.special_sacks.desc}"]
@@ -2643,7 +2662,10 @@
 			y: 5.0d
 		}
 		{
-			dependencies: ["7FA5B6354A49C396"]
+			dependencies: [
+				"7FA5B6354A49C396"
+				"015E7A116CCD3191"
+			]
 			description: ["{quests.tfg_tips.straw_basket.desc}"]
 			guide_page: "tfc:field_guide tfc:sns/straw_basket"
 			id: "67F40A90844EC0FC"
@@ -2728,6 +2750,7 @@
 				}
 			}
 			id: "379F434116632A89"
+			optional: true
 			shape: "octagon"
 			size: 2.0d
 			subtitle: "{quests.tfg_tips.tools_tips.mattocks.subtitle}"

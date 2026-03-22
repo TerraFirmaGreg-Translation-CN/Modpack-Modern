@@ -460,14 +460,11 @@ global.BIG_ROCK_TABLE = /** @type {{String, RockType}} */ ({
 		raw: generateFormsExisting('crackrack', 'tfg:rock/%s', { block: 'beneath:crackrack' }),
 		cobble: generateForms('crackrack', 'tfg:rock/cobble_%s', 
 			generateForms('crackrack', 'tfg:rock/mossy_cobble_%s')),
-		bricks: generateFormsExisting('nether', 'minecraft:%s_brick', { block: 'minecraft:nether_bricks' },
+		bricks: generateFormsExisting('nether', 'minecraft:%s_brick', { block: 'minecraft:nether_bricks', wall: 'minecraft:nether_brick_fence' },
 			generateForms('nether', 'tfg:rock/mossy_bricks_%s'),
 			generateFormsExisting('nether', 'tfg:rock/cracked_bricks_%s', { block: 'minecraft:cracked_nether_bricks' })),
 		polished: generateForms('crackrack', 'tfg:rock/polished_%s'),
-		chiseled: { block: 'minecraft:chiseled_nether_bricks' },
-		stonecutting: [
-			{ block: 'minecraft:nether_brick_fence' }
-		]
+		chiseled: { block: 'minecraft:chiseled_nether_bricks' }
 	}),
 	"calcite": {
 		material: 'calcite',
@@ -795,6 +792,7 @@ global.BIG_ROCK_TABLE = /** @type {{String, RockType}} */ ({
 		dimensions: ['ad_astra:venus'],
 		pillar: 'create:scoria_pillar',
 		pillar2: 'create:layered_scoria',
+		stonecutterTag: 'create:stone_types/scoria',
 		raw: generateFormsExisting('scoria', 'tfg:rock/%s', { 
 			block: 'create:scoria',
 			texture: 'create:block/palettes/stone_types/scoria'
@@ -819,6 +817,7 @@ global.BIG_ROCK_TABLE = /** @type {{String, RockType}} */ ({
 		dimensions: ['ad_astra:moon', 'ad_astra:mars', 'ad_astra:venus'],
 		pillar: 'create:scorchia_pillar',
 		pillar2: 'create:layered_scorchia',
+		stonecutterTag: 'create:stone_types/scorchia',
 		raw: generateFormsExisting('scorchia', 'tfg:rock/%s', {
 			block: 'create:scorchia',
 			texture: 'create:block/palettes/stone_types/scorchia'
@@ -854,7 +853,7 @@ global.BIG_ROCK_TABLE = /** @type {{String, RockType}} */ ({
 	"mercury_stone": generateMissing('mercury_stone', {
 		material: 'tfg:igneous_ultramafic',
 		tfcTag: 'tfc:igneous_intrusive_items',
-		gravelTag: 'tfc:white_gravel',
+		gravelTag: 'tfc:red_gravel',
 		sound: 'stone',
 		mapColor: 'terracotta_purple',
 		dimensions: ['ad_astra:mercury'],

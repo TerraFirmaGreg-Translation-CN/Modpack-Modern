@@ -1001,6 +1001,12 @@ const registerMinecraftRecipes = (event) => {
 		.itemOutputs('minecraft:glow_ink_sac')
 		.duration(40)
 		.EUt(GTValues.VA[GTValues.LV])
+
+	event.shapeless("minecraft:glow_ink_sac", [
+      "minecraft:glowstone_dust",
+      "minecraft:glowstone_dust",
+      "#forge:dyes"])
+    .id("tfg:shapeless/glow_ink_sac");
 		
 	//#endregion
 
@@ -1031,10 +1037,9 @@ const registerMinecraftRecipes = (event) => {
 	//#region Pressure Plates
 
 	const PRESSURE_PLATES = [
-		{type: 'bamboo', material: 'minecraft:bamboo_slab'},
-		{type: 'polished_blackstone', material: 'minecraft:polished_blackstone_slab'},
-		{type: 'light_weighted', material: '#forge:plates/gold'},
-		{type: 'heavy_weighted', material: '#forge:plates/iron'}
+		{type: 'polished_blackstone', material: 'minecraft:polished_blackstone_slab', recycle: GTMaterials.get('tfg:igneous_ultramafic'), yield: 0.5 },
+		{type: 'light_weighted', material: '#forge:plates/gold', recycle: GTMaterials.Gold, yield: 2 },
+		{type: 'heavy_weighted', material: '#forge:plates/iron', recycle: GTMaterials.Iron, yield: 2 }
 	]
 	PRESSURE_PLATES.forEach(x => {
 		event.shaped(`minecraft:${x.type}_pressure_plate`, [
@@ -1054,14 +1059,13 @@ const registerMinecraftRecipes = (event) => {
 			.circuit(3)
 			.duration(50)
 			.EUt(2)
+
+		TFGHelpers.registerMaterialInfo(`minecraft:${x.type}_pressure_plate`, [x.recycle, x.yield])
 	})
 
 	event.shapeless('3x minecraft:polished_blackstone_button', ['minecraft:polished_blackstone_pressure_plate', '#forge:tools/saws'])
 		.id(`tfg:shapeless/saw_blackstone_pressure_plate_to_button`)
 			
-	event.shapeless('3x minecraft:bamboo_button', ['minecraft:bamboo_pressure_plate', '#forge:tools/saws'])
-		.id(`tfg:shapeless/saw_bamboo_pressure_plate_to_button`)
-
 	// #endregion
 
 	// Minecart w/ Furnace
